@@ -1,7 +1,56 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #d7e5e4;
+}
+
 .box {
     max-width: 600px;
     margin: 50px auto;
     border: solid 1px grey;
     border-radius: 10px;
+    border-color: #4B8891;
     padding: 20px;
+    background-color: #ECEBE9;
+}
+
+.description {
+    color: #82a39e;
+    font-size: 15px;
+}
+
+.metrics {
+    display: inline;
+    position: relative;
+    bottom: 25px;
+    right: 5px;
+}
+
+.forecast {
+    text-align: right;
+    padding: 0 15px;
+}
+
+h1 {
+    padding: 0 5px;
+    color: #28354B;
+}
+
+h2 {
+    display: inline;
+    font-size: 40px;
+}
+
+ul {
+    list-style: none;
+    padding: 0 5px;
+}
+
+a {
+    color: #4B8891;
+}
+
+small {
+    position: relative;
+    top: 45px;
+    right: 13px;
 }
