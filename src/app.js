@@ -23,21 +23,26 @@ function formatDate(timestamp) {
 }
 
 function displayTemperature(response) {
+    console.log(response.data);
     let temperatureDisplay = document.querySelector("#temperature");
     let cityDisplay = document.querySelector("#city");
     let descriptionDisplay = document.querySelector("#description");
     let humidityDisplay = document.querySelector("#humidity");
     let windDisplay = document.querySelector("#wind");
     let dateDisplay = document.querySelector("#date");
+    let iconDisplay = document.querySelector("#iconDisplay");
+
     temperatureDisplay.innerHTML = Math.round(response.data.temperature.current);
     cityDisplay.innerHTML = response.data.city;
     descriptionDisplay.innerHTML = response.data.condition.description;
     humidityDisplay.innerHTML = response.data.temperature.humidity;
     windDisplay.innerHTML = Math.round(response.data.wind.speed);
     dateDisplay.innerHTML = formatDate(response.data.time * 1000);
+    iconDisplay.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
+    iconDisplay.setAttribute("alt", response.data.condition.description)
 }
 
-let city = `Santa Barbara`;
+let city = `Madagascar`;
 let apiKey = `faca83b09f0bt8700a3e54o84043fbae`;
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
