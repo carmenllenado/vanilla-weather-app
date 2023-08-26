@@ -13,7 +13,7 @@ body {
     background-color: #ECEBE9;
 }
 
-.description {
+.forecast {
     color: #82a39e;
     font-size: 15px;
 }
@@ -25,9 +25,13 @@ body {
     right: 5px;
 }
 
-.forecast {
+.temperature {
     text-align: right;
     padding: 0 15px;
+}
+
+.description {
+    display: inline;
 }
 
 h1 {

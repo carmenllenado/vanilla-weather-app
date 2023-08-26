@@ -9,21 +9,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/style.css">
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 </head>
 <body>
 <div class="container box">
-   <h1>Baguio</h1>
-    <div class="row description">
+   <h1 id="city">Baguio</h1>
+    <div class="row forecast">
         <div class="col">
             <ul>
-                <li>Wednesday 06:00, overcast</li>
-                <li>Humidity: 80%</li>
-                <li>Wind: 5km/h</li>
+                <li id="date">Wednesday 06:00, <p class="description" id="description">overcast</p></li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
             </ul>
         </div>
-        <div class="col-5 forecast">
+        <div class="col-5 temperature">
             <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="overcast" width="40px">
-            <h2>30º</h2> <p class="metrics">C | F</p>
+            <h2 id="temperature">30º</h2> <p class="metrics">C | F</p>
         </div>
         <div class="col-10 source-code">
             <small><a href="https://github.com/carmenllenado/vanilla-weather-app" target="_blank">Source code</a> by Carmen Llenado, hosted on <a href="https://www.netlify.com/" target="_blank">Netlify</a></small>
