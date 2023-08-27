@@ -45,6 +45,7 @@ h2 {
 ul {
     list-style: none;
     padding: 0 5px;
+    text-transform: capitalize;
 }
 
 a {
@@ -53,7 +54,7 @@ a {
 
 small {
     position: relative;
-    top: 45px;
+    top: 30px;
     right: 13px;
 }
 img {

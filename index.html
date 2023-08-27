@@ -12,15 +12,30 @@
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 </head>
 <body>
-<div class="container box">
-   <h1 id="city">Baguio</h1>
+<div class="container box pb-0">
+    <form id="search-form" class="mb-3 searchForm">
+        <div class="row">
+            <div class="col-9">
+        <input  
+        type="search"
+        placeholder="Enter a city"
+        class="form-control"
+        id="city-input"
+        autocomplete="off">
+    </div>
+    <div class="col-3">
+        <input type="submit" value="search" class="btn btn-primary w-100">
+    </div>
+    </form>
+</div>
+   <h1 class="mb-3" id="city">Baguio</h1>
     <div class="row forecast">
         <div class="col">
             <ul>
-                <li>Last updated on <span id="date">Wednesday 06:00</span></li>
-                <li><span id="description">overcast</span></li>
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span> km/h</li>
+                <li class="mb-1">Last updated on <span id="date">Wednesday 06:00</span></li>
+                <li class="mb-1"><span id="description">overcast</span></li>
+                <li class="mb-1">Humidity: <span id="humidity"></span>%</li>
+                <li class="mb-1">Wind: <span id="wind"></span> km/h</li>
             </ul>
         </div>
         <div class="col-5 temperature">
