@@ -73,6 +73,15 @@ function showCelsiusTemperature(event) {
     celsiusLink.classList.add("active");
 }
 
+function getLocation(position) {
+    let apiKey = `faca83b09f0bt8700a3e54o84043fbae`;
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}`;
+
+    axios.get(apiUrl).then(displayTemperature);
+}
+
 let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
@@ -84,4 +93,6 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
-search("Makati");
+navigator.geolocation.getCurrentPosition(getLocation);
+
+search(getLocation);

@@ -15,32 +15,36 @@
 <div class="container box pb-0">
     <form id="search-form" class="mb-3 searchForm">
         <div class="row">
-            <div class="col-9">
-        <input  
-        type="search"
-        placeholder="Enter a city"
-        class="form-control"
-        id="city-input"
-        autocomplete="off">
+            <div class="col-8">
+                <input  
+                    type="search"
+                    placeholder="Enter a city"
+                    class="form-control shadow-sm"
+                    id="city-input"
+                    autocomplete="off"
+                >
+            </div>
+    <div class="col-2">
+        <input type="submit" value="Search" class="btn btn-primary">
     </div>
-    <div class="col-3">
-        <input type="submit" value="search" class="btn btn-primary w-100">
+    <div class="col-2">
+        <input id="button-location" type="submit" value="Here" class="btn btn-success">
     </div>
     </form>
 </div>
-   <h1 class="mb-3" id="city">Baguio</h1>
+   <h1 class="mb-3" id="city">_</h1>
     <div class="row forecast">
         <div class="col">
             <ul>
-                <li class="mb-1">Last updated on <span id="date">Wednesday 06:00</span></li>
-                <li class="mb-1"><span id="description">overcast</span></li>
+                <li class="mb-1">Last updated on <span id="date">_</span></li>
+                <li class="mb-1"><span id="description">_</span></li>
                 <li class="mb-1">Humidity: <span id="humidity"></span>%</li>
                 <li class="mb-1">Wind: <span id="wind"></span> km/h</li>
             </ul>
         </div>
         <div class="col-5 temperature">
-            <img id="iconDisplay" src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="overcast" width="40px">
-            <h2 id="temperature">30</h2> <span class="metrics"><a href="#" id="celsius-link" class="active">ºC</a> | <a href="#" id="fahrenheit-link">ºF</a></span>
+            <img id="iconDisplay" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAQBJREFUaN7t2csNwyAMBmBGYYSMwhgdgxEYjRW6ARu4HNyqB0CKednElf5b2/hLSALGAICRHKMABSjgUMDdD7xfLifkxByoJOJ33O3/nwHIhVgsKDWKriXhb+0WQD6wJxZegvhlADzrcUDhpeFlpwLyAa5BZ711Na4pgAXFNxFdABw2K4r/R9iRgLiw+N89MQSATxvYFN8F2DB0qkOJCggbi/8m9AASA0AiAXBuA0ziKIDACBAogMgIECkAYBUFKEABzwOIf4yKf5HJnkqIn8wxmk775y5oxC8pj1jUH9FWEd/YOqK1eERz94j2euFqUCF7NzjYbzHpLqUCFKCAJfkAq7RimK7qUtAAAAAASUVORK5CYII=" alt="sun" width="40px">
+            <h2 id="temperature">_</h2> <span class="metrics"><a href="#" id="celsius-link" class="active">ºC</a> | <a href="#" id="fahrenheit-link">ºF</a></span>
         </div>
         <div class="col-10 source-code">
             <small><a href="https://github.com/carmenllenado/vanilla-weather-app" target="_blank">Source code</a> by Carmen Llenado, hosted on <a href="https://www.netlify.com/" target="_blank">Netlify</a></small>
