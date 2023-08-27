@@ -3,6 +3,36 @@ body {
     background-color: #d7e5e4;
 }
 
+h1 {
+    padding: 0 5px;
+    color: #28354B;
+}
+
+h2 {
+    display: inline;
+    font-size: 40px;
+}
+
+ul {
+    list-style: none;
+    padding: 0 5px;
+    text-transform: capitalize;
+}
+
+a {
+    color: #4B8891;
+    text-decoration: none;
+}
+
+small {
+    position: relative;
+    top: 30px;
+    right: 13px;
+}
+img {
+    width: 80px;
+}
+
 .box {
     max-width: 600px;
     margin: 50px auto;
@@ -32,31 +62,7 @@ body {
     right: 20px;
 }
 
-h1 {
-    padding: 0 5px;
-    color: #28354B;
-}
-
-h2 {
-    display: inline;
-    font-size: 40px;
-}
-
-ul {
-    list-style: none;
-    padding: 0 5px;
-    text-transform: capitalize;
-}
-
-a {
-    color: #4B8891;
-}
-
-small {
-    position: relative;
-    top: 30px;
-    right: 13px;
-}
-img {
-    width: 80px;
+.forecast .active {
+    color: #82a39e;
+    cursor: default;
 }
