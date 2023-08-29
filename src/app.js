@@ -82,8 +82,34 @@ function getLocation(position) {
     axios.get(apiUrl).then(displayTemperature);
 }
 
-function showLocation(location) {
-    
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+
+    let forecastHTML = `<div class="row">`;
+    let days = ["Wed", "Thu", "Fri", "Sat"];
+    days.forEach(function (day) {
+     forecastHTML = 
+        forecastHTML + 
+        `
+            <div class="col-2">
+                <div class="weather-forecast-date">
+                    ${day}
+                </div>
+                <img src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png"
+                    alt="default-image"
+                    width="36">
+                <div class="weather-forecast-temperature">
+                    <span class="weather-forecast-temperature-max">
+                        18º </span>
+                    <span class="weather-forecast-temperature-min">
+                        12º </span>
+            
+                </div>
+            </div>
+    `;   
+})
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
 }
 
 let celsiusTemperature = null;
@@ -97,12 +123,10 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
-let locationButton = document.querySelector("#button-location");
-locationButton.addEventListener("click", showLocation);
-
 navigator.geolocation.getCurrentPosition(getLocation);
 
 search(getLocation);
+displayForecast()
 
 //Whatever first shows up in displayTemperature aka.currentLocation
 // save/remember the location.element.value or city.element.value
