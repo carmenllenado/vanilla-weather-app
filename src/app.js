@@ -82,6 +82,10 @@ function getLocation(position) {
     axios.get(apiUrl).then(displayTemperature);
 }
 
+function showLocation(location) {
+    
+}
+
 let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
@@ -93,6 +97,14 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
+let locationButton = document.querySelector("#button-location");
+locationButton.addEventListener("click", showLocation);
+
 navigator.geolocation.getCurrentPosition(getLocation);
 
 search(getLocation);
+
+//Whatever first shows up in displayTemperature aka.currentLocation
+// save/remember the location.element.value or city.element.value
+//add "click" eventListener for `Here` button
+//reroute to Here button from starting location
