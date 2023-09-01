@@ -22,6 +22,14 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 
+function getForecast(coordinates) {
+    console.log(coordinates);
+    let apiKey = `faca83b09f0bt8700a3e54o84043fbae`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
     let temperatureDisplay = document.querySelector("#temperature");
     let cityDisplay = document.querySelector("#city");
@@ -41,6 +49,8 @@ function displayTemperature(response) {
     dateDisplay.innerHTML = formatDate(response.data.time * 1000);
     iconDisplay.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
     iconDisplay.setAttribute("alt", response.data.condition.description)
+
+    getForecast(response.data.coordinates);
 }
 
 function search(city) {
@@ -82,7 +92,8 @@ function getLocation(position) {
     axios.get(apiUrl).then(displayTemperature);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+    console.log(response.data.daily);
     let forecastElement = document.querySelector("#forecast");
 
     let forecastHTML = `<div class="row">`;
@@ -126,8 +137,6 @@ celsiusLink.addEventListener("click", showCelsiusTemperature);
 navigator.geolocation.getCurrentPosition(getLocation);
 
 search(getLocation);
-displayForecast()
-
 //Whatever first shows up in displayTemperature aka.currentLocation
 // save/remember the location.element.value or city.element.value
 //add "click" eventListener for `Here` button
