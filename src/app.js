@@ -23,7 +23,6 @@ function formatDate(timestamp) {
 }
 
 function getForecast(coordinates) {
-    console.log(coordinates);
     let apiKey = `faca83b09f0bt8700a3e54o84043fbae`;
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
 
@@ -38,8 +37,6 @@ function displayTemperature(response) {
     let windDisplay = document.querySelector("#wind");
     let dateDisplay = document.querySelector("#date");
     let iconDisplay = document.querySelector("#iconDisplay");
-
-    celsiusTemperature = response.data.temperature.current;
 
     temperatureDisplay.innerHTML = `${Math.round(response.data.temperature.current)}`;
     cityDisplay.innerHTML = response.data.city;
@@ -64,23 +61,6 @@ function handleSubmit(event) {
     event.preventDefault();
     let cityInputElement = document.querySelector("#city-input")
     search(cityInputElement.value);
-}
-
-function showFahrenheitTemperature(event) {
-    event.preventDefault();
-    let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-    let temperatureDisplay = document.querySelector("#temperature");
-    celsiusLink.classList.remove("active");
-    fahrenheitLink.classList.add("active");
-    temperatureDisplay.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function showCelsiusTemperature(event) {
-    event.preventDefault();
-    let temperatureDisplay = document.querySelector("#temperature");
-    temperatureDisplay.innerHTML = Math.round(celsiusTemperature);
-    fahrenheitLink.classList.remove("active");
-    celsiusLink.classList.add("active");
 }
 
 function getLocation(position) {
@@ -137,12 +117,6 @@ let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 navigator.geolocation.getCurrentPosition(getLocation);
 
